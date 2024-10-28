@@ -1,0 +1,63 @@
+name: Convert PDFs to Markdown
+
+on:
+  schedule:
+    - cron: "0 0 */2 * *"
+  workflow_dispatch:
+
+jobs:
+  convert_pdfs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Install Pandoc
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc
+
+      - name: Find and convert PDFs to Markdown
+        run: |
+          mkdir -p markdown
+
+          for dir in Materials/*/ ; do
+            dirname=$(basename "$dir")
+            if [[ "$dirname" =~ ^[0-9]{8}$ ]]; then
+              echo "Processing directory: $dirname"
+
+              for pdf in "$dir"*.pdf; do
+                if [[ -f "$pdf" ]]; then
+                  filename=$(basename "$pdf" .pdf)
+                  md_file="markdown/${dirname}_${filename}.md"
+
+                  pandoc "$pdf" -o "$md_file"
+
+                  echo "Converted $pdf to $md_file"
+                fi
+              done
+            else
+              echo "Skipping directory: $dirname (not matching date format)"
+            fi
+          done
+
+      - name: Check for changes
+        id: git_diff
+        run: |
+          git add markdown/
+          # 检查是否有变化
+          git diff --cached --quiet || echo "changes=true" >> $GITHUB_ENV
+
+      - name: Commit and push changes
+        if: env.changes == 'true'
+        run: |
+          git commit -m "Convert PDFs to Markdown on $(date +'%Y-%m-%d')"
+          git push origin HEAD:${{ github.ref }}
