@@ -4,6 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "CPU Tech Forum",
   description: "A Docs Website for Computer Psycho Union UNNC",
+  base: "/CPU_Tech_Forum/",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -20,7 +21,7 @@ export default defineConfig({
         ]
       }
     ],
-    base: "/CPU_Tech_Forum/",
+    
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
     ]
