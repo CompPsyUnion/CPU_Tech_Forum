@@ -4,7 +4,21 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "CPU Tech Forum",
   description: "A Docs Website for Computer Psycho Union UNNC",
+  head: [[
+    'link',
+  ]],
   base: "/CPU_Tech_Forum/",
+  locales: {
+    root: {
+      label: 'Chinese',
+      lang: 'zh-CN'
+    },
+    en: {
+      label: 'English',
+      lang: 'en',
+      link: '/en/'
+    }
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -12,7 +26,6 @@ export default defineConfig({
       { text: 'Events', link: '/events/' },
       { text: 'About', link: '/about.html' }
     ],
-
     sidebar: [
       {
         '/events/': [
@@ -27,17 +40,6 @@ export default defineConfig({
     ],
     search: {
       provider: 'local'
-    },
-    locales: {
-      root: {
-        label: 'Chinese',
-        lang: 'zh-CN'
-      },
-      en: {
-        label: 'English',
-        lang: 'en',
-        link: '/en/'
-      }
     },
     socialLinks: [
       { icon: 'github', link: 'https://github.com/CompPsyUnion/' }
