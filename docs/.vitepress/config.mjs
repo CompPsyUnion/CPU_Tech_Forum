@@ -10,8 +10,7 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Events', link: '/events/' },
-      { text: 'About', link: '/about.html' },
-      { text: 'Languages', items: [{text: 'Chinese', link: '/'}, {text: 'English', link: '/en/'}] }
+      { text: 'About', link: '/about.html' }
     ],
 
     sidebar: [
