@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/CompPsyUnion/CPU_Tech_Forum#readme",
   "dependencies": {
+    "radix-vue": "^1.9.8",
     "vitepress": "^1.4.1"
   }
 }

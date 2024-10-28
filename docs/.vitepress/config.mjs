@@ -10,7 +10,8 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Events', link: '/events/' },
-      { text: 'About', link: '/about.html' }
+      { text: 'About', link: '/about.html' },
+      { text: 'Languages', items: [{text: 'Chinese', link: '/'}, {text: 'English', link: '/en/'}] }
     ],
 
     sidebar: [
@@ -27,6 +28,17 @@ export default defineConfig({
     ],
     search: {
       provider: 'local'
+    },
+    locales: {
+      root: {
+        label: 'Chinese',
+        lang: 'zh-CN'
+      },
+      en: {
+        label: 'English',
+        lang: 'en',
+        link: '/en/'
+      }
     },
     socialLinks: [
       { icon: 'github', link: 'https://github.com/CompPsyUnion/' }
