@@ -20,7 +20,7 @@ export default defineConfig({
         ]
       }
     ],
-
+    base: "/CPU_Tech_Forum",
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
     ]
