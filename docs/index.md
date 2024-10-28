@@ -4,22 +4,22 @@ layout: home
 
 hero:
   name: "CPU Tech Forum"
-  text: "A Docs Website for Computer Psycho Union UNNC"
-  tagline: My great project tagline
+  text: "A Docs Website for Forum"
+  tagline: A weekly event of Computer Psycho Union, UNNC
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: Materials
+      link: /events/
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: About Tech Forum
+      link: /about
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: For CPU Member
+    details: A opportunity for communication what you know and show yourself to others. 
+  - title: For 0 foundation CS student
+    details: Learn more CS major knowledge in our event. Improve your Computer Science Studying.
+  - title: On-site and online
+    details: Bi-weekly on-site events in UNNC Campus, and live & recording meetings available on MSTeams.
 ---
 
