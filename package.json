@@ -1,0 +1,34 @@
+{
+  "name": "cpu_tech_forum",
+  "version": "1.0.0",
+  "description": "Docs of CPU Assiociation's Weekly Tech Forum",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CompPsyUnion/CPU_Tech_Forum.git"
+  },
+  "keywords": [
+    "Tech",
+    "CS",
+    "Computer",
+    "Docs"
+  ],
+  "author": "Computer Psycho Union",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CompPsyUnion/CPU_Tech_Forum/issues"
+  },
+  "homepage": "https://github.com/CompPsyUnion/CPU_Tech_Forum#readme",
+  "dependencies": {
+    "vitepress": "^1.4.1"
+  }
+}
