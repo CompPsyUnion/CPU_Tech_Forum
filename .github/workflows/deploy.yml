@@ -45,6 +45,10 @@ jobs:
         uses: actions/configure-pages@v4
       - name: Install dependencies
         run: npm ci # 或 pnpm install / yarn install / bun install
+      - name: generate config/env file
+        env:
+          GISCUS_TOKEN: ${{ secrets.GISCUS_CONFIG }}
+        run: echo "$GISCUS_TOKEN" > ./src/.vitepress/config/env.js
       - name: Build with VitePress
         run: npm run docs:build # 或 pnpm docs:build / yarn docs:build / bun run docs:build
       - name: Upload artifact
