@@ -38,7 +38,9 @@ jobs:
       - name: generate config/env file
         env:
           GISCUS_TOKEN: ${{ secrets.GISCUS_CONFIG }}
-        run: echo "export default { token: '$GISCUS_TOKEN' };" > ./docs/.vitepress/config/env.js
+        run: |
+          echo "export default { token: '$GISCUS_TOKEN' };" > ./docs/.vitepress/config/env.js
+
 
       - name: Build with VitePress
         run: npm run docs:build
@@ -54,7 +56,6 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     needs: build
     runs-on: ubuntu-latest
-    name: Deploy
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
