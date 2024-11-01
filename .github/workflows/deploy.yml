@@ -35,12 +35,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Generate config/env file
-        env:
-          GISCUS_CONFIG: ${{ secrets.GISCUS_CONFIG }}
-        run: |
-          echo "export default $(echo $GISCUS_CONFIG);" > ./docs/.vitepress/config/env.js
-
       - name: Build with VitePress
         run: npm run docs:build
 
