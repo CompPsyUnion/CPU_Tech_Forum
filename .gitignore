@@ -23,6 +23,10 @@ docs/.vitepress/cache
 *.njsproj
 *.sln
 
+# Environment
+.env
+.env.local
+
 # MacOS
 .DS_Store
 
