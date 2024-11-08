@@ -46,7 +46,7 @@ export default defineConfig({
     editLink: {
       text: "在 GitHub 上编辑此页",
       pattern:
-          "https://github.com/CompPsyUnion/CPU_Tech_Forum/edit/main/src/:path",
+          "https://github.com/CompPsyUnion/CPU_Tech_Forum/edit/main/docs/:path",
     },
     lastUpdated: {
       text: "最后更新于",
